@@ -5,10 +5,17 @@
 
  class Solution {
     fun solution(numbers: IntArray): IntArray {
+        // var answer = IntArray(numbers.size)
+        // for((idx, num) in numbers.withIndex()) {
+        //     answer[idx] = num * 2
+        // }
+        // return answer
+
+        // kotlin map 함수 이용
+        //  map 함수 : 값을 변형하여 새로운 리스트를 생성함
+        //  새로운 풀이
         var answer: IntArray = intArrayOf()
-        for((idx, num) in numbers.withIndex()) {
-        }
-        answer = numbers
+        answer = numbers.map { it * 2 }.toIntArray()
         return answer
     }
 }
@@ -16,5 +23,10 @@
 fun main() {
     val sol = Solution()
     val ex: IntArray = intArrayOf(1,2,3,4,5)
-    sol.solution(ex)
+    val result = sol.solution(ex)
+
+    for(i in 0..result.size -1) {
+        print("${result[i]} ")
+    }
+    println("")
 }
