@@ -1,0 +1,28 @@
+/**
+ * Day5-2 : 아이스 아메리카노
+ * 
+ * 머쓱이는 추운 날에도 아이스 아메리카노만 마십니다. 
+ * 아이스 아메리카노는 한잔에 5,500원입니다. 
+ * 머쓱이가 가지고 있는 돈 money가 매개변수로 주어질 때, 
+ * 머쓱이가 최대로 마실 수 있는 아메리카노의 잔 수와 남는 돈을 순서대로 담은 배열을 return 하도록 solution 함수를 완성해보세요.
+ * 
+ * 입출력 예시
+ * money = 5500, result = [1, 0]
+ * money = 15000, result = [2, 4000]
+ */
+
+ class Solution {
+    companion object {
+        const val AMERICANO = 5500
+    }
+
+    fun solution(money: Int): IntArray {
+        var answer: IntArray = intArrayOf((money / AMERICANO).toInt(), (money % AMERICANO))
+        return answer
+    }
+}
+
+fun main() {
+    val answer = Solution().solution(15000)
+    println("${answer[0]} / ${answer[1]}")
+}
